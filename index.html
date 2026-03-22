@@ -146,12 +146,31 @@ footer {
 <footer>
 ⚠️ Play responsibly | 18+ only<br>
 📩 Contact: crazyxyo3@gmail.com
+    <p id="counter">🔥 6837+ Users Joined</p>
 </footer>
 <script>
 // Popup after 10 seconds
 setTimeout(() => {
     alert("🔥 Hurry! Bonus Offer Ending Soon!");
 }, 5000);
+</script>
+<script>
+    let count = localStorage.getItem("clickCount");
+
+if (!count) {
+  count = 6837;
+} else {
+  count = parseInt(count);
+}
+
+function increaseCount() {
+  count++;
+  localStorage.setItem("clickCount", count);
+}
+
+increaseCount();
+
+document.getElementById("counter").innerText = "🔥 " + count + "+ Users Joined";
 </script>
 
 </body>
